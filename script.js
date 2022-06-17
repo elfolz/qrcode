@@ -1,4 +1,5 @@
-var url = ''
+var url = 'square'
+var dotsStyle = 'extra-rounded'
 var colorPrimary = '#000'
 var colorSecondary = '#000'
 var colorAccent = '#000'
@@ -7,7 +8,6 @@ var logo = ''
 const qrCode = new QRCodeStyling({
 	width: Math.min(512, document.body.clientWidth),
 	height: Math.min(512, document.body.clientWidth),
-	type: "svg",
 	errorCorrectionLevel: 'H',
 	imageOptions: {
 		crossOrigin: 'anonymous',
@@ -23,14 +23,14 @@ function refreshQRCode() {
 		image: logo,
 		dotsOptions: {
 			color: colorPrimary,
-			type: 'extra-rounded'
+			type: dotsStyle
 		},
 		cornersDotOptions: {
 			color: colorSecondary
 		},
 		cornersSquareOptions: {
 			color: colorAccent,
-			type: 'extra-rounded'
+			type: dotsStyle
 		}
 	})
 }
@@ -67,7 +67,7 @@ document.querySelector('#logo').onchange = e => {
 }
 document.querySelector('#download').onclick = () => {
 	try {
-		qrCode.download({name: 'qrcode', extension: 'svg'})
+		qrCode.download({name: 'qrcode', extension: 'png'})
 	} catch(e) {
 		alert(e)
 	}

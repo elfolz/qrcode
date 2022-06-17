@@ -52,7 +52,9 @@ section label svg {
 main {
 	width: fit-content;
 	margin: 0 auto;
-	border-radius: 8px;
+	border-radius: 12px;
+	background-color: #fff;
+	overflow: hidden;
 }
 footer {
 	position: fixed;
@@ -74,7 +76,7 @@ button {
 input[type=text] {
 	border-radius: 8px;
 	border: none;
-	background-color: var(--color-primary);
+	background-color: var(--color-primary) !important;
 	padding: 12px;
 	color: #000;
 }
@@ -89,4 +91,16 @@ input[type=color] {
 	height: 56px;
 	border: none;
 	cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #121212;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		background-color: whitesmoke;
+	}
 }
