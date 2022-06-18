@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
-	<header>
+	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -14,20 +14,42 @@
 		<meta name="description" content="QR Code Generator">
 		<link rel="stylesheet" href="style.css">
 		<title>QR Code Generator</title>
-	</header>
+	</head>
 	<body>
 		<section>
 			<input placeholder="URL" id="url" type="text">
-			<span title="Change primary color">
-				<input id="color-primary" type="color">
-			</span>
-			<span title="Change secondary color">
-				<input id="color-secondary" type="color">
-			</span>
-			<span title="Change accent color">
-				<input id="color-accent" type="color">
-			</span>
-			<label for="logo" title="Changelogo image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></label>
+			<mark>
+				<label for="color-primary">Pixel</label>
+				<span>
+					<input id="color-primary" type="color">
+				</span>
+			</mark>
+			<mark>
+				<label for="color-secondary">Square</label>
+				<span>
+					<input id="color-secondary" type="color">
+				</span>
+			</mark>
+			<mark>
+				<label for="color-accent">Round</label>
+				<span>
+					<input id="color-accent" type="color">
+				</span>
+			</mark>
+			<mark>
+				<label for="color-bg">Background</label>
+				<span>
+					<input id="color-bg" type="color">
+				</span>
+			</mark>
+			<mark>
+				<label>Logo</label>
+				<div>
+					<label for="logo">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+					</label>
+				</div>
+			</mark>
 		</section>
 		<main></main>
 		<footer>
