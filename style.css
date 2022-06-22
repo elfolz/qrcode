@@ -6,8 +6,8 @@
 	outline: none;
 }
 :root {
-	--color-primary: #29f39b;
-	--color-accent: #02a2f9;
+	--color-primary: #1f75fe;
+	--color-accent: #00fa9a;
 }
 ::placeholder {
 	color: #333;
@@ -85,7 +85,6 @@ button {
 	padding: 0 12px;
 	border-radius: 4px;
 	cursor: pointer;
-	color: #fff;
 	background-color: var(--color-accent);
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -94,7 +93,7 @@ input[type=text] {
 	border: none;
 	background-color: var(--color-primary) !important;
 	padding: 12px;
-	color: #000;
+	color: whitesmoke;
 }
 input[type=file] {
 	display: none;
