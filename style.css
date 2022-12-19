@@ -10,7 +10,7 @@
 	--color-accent: #00fa9a;
 }
 ::placeholder {
-	color: #333;
+	color: rgba(255,255,255,0.5);
 }
 body {
 	max-width: 512px;
@@ -74,10 +74,21 @@ main {
 	margin: 0 auto;
 	border-radius: 12px;
 	overflow: hidden;
+	background-color: rgba(0,0,0,0.25);
 }
 footer {
+	display: flex;
+	justify-content: space-evenly;
 	margin-top: 24px;
 	text-align: center;
+}
+footer button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+footer button span {
+	margin-left: 6px;
 }
 button {
 	height: 36px;

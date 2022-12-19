@@ -17,27 +17,27 @@
 	</head>
 	<body>
 		<section>
-			<input placeholder="URL" id="url" type="text">
+			<input placeholder="Insira sua URL or Texto" id="url" type="text">
 			<mark>
-				<label for="color-primary">Pixel</label>
+				<label for="color-primary">Cor</label>
 				<span>
 					<input id="color-primary" type="color">
 				</span>
 			</mark>
 			<mark>
-				<label for="color-secondary">Square</label>
+				<label for="color-secondary">Ponto</label>
 				<span>
 					<input id="color-secondary" type="color">
 				</span>
 			</mark>
 			<mark>
-				<label for="color-accent">Round</label>
+				<label for="color-accent">Contorno</label>
 				<span>
 					<input id="color-accent" type="color">
 				</span>
 			</mark>
 			<mark>
-				<label for="color-bg">Background</label>
+				<label for="color-bg">Fundo</label>
 				<span>
 					<input id="color-bg" type="color">
 				</span>
@@ -53,7 +53,14 @@
 		</section>
 		<main></main>
 		<footer>
-			<button id="download">DOWNLOAD</button>
+			<button id="copy">
+				<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"/></svg>
+				<span>COPIAR</span>
+			</button>
+			<button id="download">
+				<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg>
+				<span>BAIXAR</span>
+			</button>
 		</footer>
 		<input placeholder="Logo" id="logo" type="file" accept="image/*">
 	</body>

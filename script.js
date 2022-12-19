@@ -54,7 +54,7 @@ function init() {
 	main.style.setProperty('width', `${width}px`)
 	main.style.setProperty('height', `${height}px`)
 	qrCode.append(main)
-	document.querySelector('#url').onchange = e => {
+	document.querySelector('#url').oninput = e => {
 		if (!e.target.value) return
 		url = e.target.value
 		refreshQRCode()
@@ -83,12 +83,21 @@ function init() {
 		let picture = e.target.files[0]
 		if (picture) reader.readAsDataURL(picture)
 	}
+	document.querySelector('#copy').onclick = () => {
+		qrCode.getRawData('png')
+		.then(response => {
+			let data = [new ClipboardItem({'image/png': response})]
+			return navigator.clipboard.write(data)
+		})
+		.catch(error => {
+			alert(error)
+		})
+	}
 	document.querySelector('#download').onclick = () => {
-		try {
-			qrCode.download({name: 'qrcode', extension: 'png'})
-		} catch(e) {
-			alert(e)
-		}
+		qrCode.download({name: 'qrcode', extension: 'png'})
+		.catch(error => {
+			alert(error)
+		})
 	}
 }
 
