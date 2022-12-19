@@ -84,17 +84,10 @@ function init() {
 		if (picture) reader.readAsDataURL(picture)
 	}
 	document.querySelector('#copy').onclick = () => {
-		navigator.permissions.query({name: 'clipboard-write'})
+		qrCode.getRawData('png')
 		.then(response => {
-			if (response.state == 'granted') {
-				return qrCode.getRawData('png')
-				.then(response => {
-					let data = [new ClipboardItem({'image/png': response})]
-					return navigator.clipboard.write(data)
-				})
-			} else if (response.state == 'denied') {
-				alert('Sem permissão para copiar.')
-			}
+			let data = [new ClipboardItem({'image/png': response})]
+			return navigator.clipboard.write(data)
 		})
 		.catch(error => {
 			alert(error)
@@ -106,6 +99,12 @@ function init() {
 			alert(error)
 		})
 	}
+}
+
+if (/ios|iphone/i.test(navigator.userAgent)) {
+	let footer = document.querySelector('footer')
+	let copyButton = document.querySelector('#copy')
+	footer.removeChild(copyButton)
 }
 
 document.onreadystatechange = () => {
