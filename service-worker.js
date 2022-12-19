@@ -3,7 +3,7 @@ self.addEventListener('install', event => {
 })
 
 self.addEventListener('fetch', event => {
-	event.respondWith(caches.open('mememeker').then(cache => {
+	event.respondWith(caches.open('qrcode-elfolz').then(cache => {
 		return cache.match(event.request)
 		.then(cachedResponse => {
 			const fetchedResponse = fetch(event.request)
