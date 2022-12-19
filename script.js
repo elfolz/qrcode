@@ -84,10 +84,17 @@ function init() {
 		if (picture) reader.readAsDataURL(picture)
 	}
 	document.querySelector('#copy').onclick = () => {
-		qrCode.getRawData('png')
+		navigator.permissions.query({name: 'clipboard-write'})
 		.then(response => {
-			let data = [new ClipboardItem({'image/png': response})]
-			return navigator.clipboard.write(data)
+			if (response.state == 'granted') {
+				return qrCode.getRawData('png')
+				.then(response => {
+					let data = [new ClipboardItem({'image/png': response})]
+					return navigator.clipboard.write(data)
+				})
+			} else if (response.state == 'denied') {
+				alert('Sem permissão para copiar.')
+			}
 		})
 		.catch(error => {
 			alert(error)
