@@ -88,6 +88,7 @@ footer button {
 	align-items: center;
 }
 footer button span {
+	color: #000;
 	margin-left: 6px;
 }
 button {
