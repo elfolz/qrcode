@@ -1,3 +1,5 @@
+navigator.serviceWorker?.register('service-worker.js')
+
 var url = ''
 var dotsStyle = 'rounded'
 var cornerStyle = 'extra-rounded'
