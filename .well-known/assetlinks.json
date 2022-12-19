@@ -1,0 +1,14 @@
+[
+	{
+		"relation": [
+			"delegate_permission/common.handle_all_urls"
+		],
+		"target": {
+			"namespace": "android_app",
+			"package_name": "com.app.elfolz.qrcode",
+			"sha256_cert_fingerprints": [
+				"11:54:33:AC:0A:8F:C0:8C:AA:11:AF:E0:58:97:48:98:85:75:38:A8:29:BB:FB:E6:DA:87:00:2A:07:DA:47:28"
+			]
+		}
+	}
+]
