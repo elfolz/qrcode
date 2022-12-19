@@ -10,7 +10,7 @@
 	--color-accent: #00fa9a;
 }
 ::placeholder {
-	color: rgba(255,255,255,0.5);
+	color: #000;
 }
 body {
 	max-width: 512px;
