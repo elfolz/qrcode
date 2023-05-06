@@ -3,15 +3,21 @@ self.addEventListener('install', event => {
 })
 
 self.addEventListener('fetch', event => {
-	event.respondWith(caches.open('qrcode-elfolz').then(cache => {
-		return cache.match(event.request)
-		.then(cachedResponse => {
-			const fetchedResponse = fetch(event.request)
-			.then(networkResponse => {
-				cache.put(event.request, networkResponse.clone())
-				return networkResponse
+	event.respondWith(
+		caches.open('qrcoder')
+		.then(cache => {
+			return cache.match(event.request)
+			.then(cachedResponse => {
+				let fetchedResponse = fetch(event.request)
+				.then(networkResponse => {
+					if (networkResponse.status == 200) cache.put(event.request, networkResponse.clone())
+					return networkResponse
+				})
+				return cachedResponse || fetchedResponse
 			})
-			return cachedResponse || fetchedResponse
 		})
-	}))
+		.catch(() => {
+			return fetch(event.request)
+		})
+	)
 })
